@@ -92,3 +92,38 @@ protected void onStop() {
 
 That's about it. Your video playback through Viblast should begin after
 you start your Activity.
+
+### Checking playback state
+There are five playback states:
+ - IDLE
+  - ```The player is neither prepared or being prepared.```
+ - PREPARING
+  - ```The player is being prepared.```
+ - BUFFERING
+  - ```The player is prepared but not able to immediately play from the current position.
+		This state typically occurs when more data needs to be buffered for playback to start.```
+ - PLAYING
+  - ```The player is playing.```
+ - ENDED
+  - ```The player has finished playing the media.```
+
+There are two options for checking playback state:
+ * check current playback state
+  * Simply call ```viblastPlayer.getPlaybackState()```:
+  ```java
+  viblastPlayer = new ViblastPlayer(viblastView, vbConfig);
+  playbackState = viblastPlayer.getPlaybackState();
+  ```
+
+ * listen for playback state changes
+  * Add listener to ```viblastPlayer```:
+  ```java
+	viblastPlayer = new ViblastPlayer(viblastView, vbConfig);
+	viblastPlayer.addListener(new Listener() {
+		@Override
+		public void onPlaybackStateChanged(ViblastPlayerState state) {
+			// state contains new playback state
+		}
+		// ...
+	});
+  ```
