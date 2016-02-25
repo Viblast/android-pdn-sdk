@@ -65,6 +65,7 @@ public class MainActivity extends Activity {
 		vbConfig.advancedConfig.put("enable-pdn", "true");
 		vbConfig.advancedConfig.put("enable-realtime-loggger", "true");
 		vbConfig.advancedConfig.put("realtime-logger-server", "wss://cs.viblast.com/rt");
+		vbConfig.advancedConfig.put("key", "200057d28abdc9fb593eb654629f2f03c14fac9c5fc0825c899bd6095ad7a8de79ad770b4e99ec1581285ecb2cac1d6d");
 
 		viblastPlayer = new ViblastPlayer(viblastView, vbConfig);
     }
@@ -92,6 +93,13 @@ protected void onStop() {
 
 That's about it. Your video playback through Viblast should begin after
 you start your Activity.
+
+### Licensing
+
+To remove the Viblast logo you should get a license key and set it in ```vbConfig```:
+```java
+vbConfig.advancedConfig.put("key", "YOURKEY");
+```
 
 ### Checking playback state
 There are five playback states:
@@ -127,3 +135,7 @@ There are two options for checking playback state:
 		// ...
 	});
   ```
+
+### ExoPlayer
+
+The current version of Viblast is built on top of ExoPlayer version *1.5.3*. It comes pre-packaged with the project.

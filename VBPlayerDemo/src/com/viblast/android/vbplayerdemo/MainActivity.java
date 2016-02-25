@@ -27,6 +27,7 @@ public class MainActivity extends Activity {
 		vbConfig.advancedConfig.put("enable-pdn", "true");
 		vbConfig.advancedConfig.put("enable-realtime-loggger", "true");
 		vbConfig.advancedConfig.put("realtime-logger-server", "wss://cs.viblast.com/rt");
+		vbConfig.advancedConfig.put("key", "200057d28abdc9fb593eb654629f2f03c14fac9c5fc0825c899bd6095ad7a8de79ad770b4e99ec1581285ecb2cac1d6d");
 
 		viblastPlayer = new ViblastPlayer(viblastView, vbConfig);
 	}
