@@ -81,12 +81,12 @@ protected void onStart() {
 }
 ```
 
-Don't forget to stop Viblast when the Activity stops
+Don't forget to stop and release Viblast when the Activity stops
 
 ```java
 @Override
 protected void onStop() {
-	viblastPlayer.stop();
+	viblastPlayer.release();
 	super.onStop();
 }
 ```

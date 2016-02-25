@@ -43,7 +43,7 @@ public class MainActivity extends Activity {
 
 	@Override
 	protected void onStop() {
-		viblastPlayer.stop();
+		viblastPlayer.release();
 		
 		super.onStop();
 	}
