@@ -1,2 +1,8 @@
-.settings
-bin/
+java_library/build/
+build/
+PlayerDemo/build/
+.gradle/
+.idea/
+PlayerDemo/.externalNativeBuild/
+PlayerDemo/PlayerDemo.iml 
+local.properties
