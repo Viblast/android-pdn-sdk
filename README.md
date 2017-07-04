@@ -5,16 +5,17 @@ Viblast PDN Android SDK extends your peer-assisted video delivery to the part of
 Visit Viblast PDN's [web page](http://viblast.com/pdn/)
 
 ### Project setup
-Let's assume you have an existing Eclipse project or you've just created one.
+Let's assume you have an existing Android Studio project or you've just created one.
 
-Download the provided `viblast-<domain>-<version>.android.zip` file and
-extract it into the directory of your project
-
-```unzip viblast-<domain>-<version>.android.zip -d <path-to-your-android-project>```
-
-After that you should have a `viblast.jar` and `exoplayer.jar` file in your project `libs/`
-directory and two file called `libviblast.so` and `libnative-viblast.jni.so`
-in the `libs/armeabi/` and `libs/x86/` directory.
+- Download the aar `viblast-<version>-release.aar` file
+- In Android studio: New > New Module > Import JAR/AAR Package
+- In Android studio: Select your module > Right Click > Open Module Settings (F4) > Dependencies > + > Module Dependency > viblast-<version>-release
+- Add dependency for ExoPlayer in `build.gradle`:
+```
+dependencies {
+    compile 'com.google.android.exoplayer:exoplayer:r2.4.3'
+}
+```
 
 ### Basic usage example
 
@@ -105,8 +106,6 @@ vbConfig.advancedConfig.put("key", "YOURKEY");
 There are five playback states:
  - IDLE
   - ```The player is neither prepared or being prepared.```
- - PREPARING
-  - ```The player is being prepared.```
  - BUFFERING
   - ```The player is prepared but not able to immediately play from the current position.
 		This state typically occurs when more data needs to be buffered for playback to start.```
@@ -138,4 +137,9 @@ There are two options for checking playback state:
 
 ### ExoPlayer
 
-The current version of Viblast is built on top of ExoPlayer version *1.5.3*. It comes pre-packaged with the project.
+The current version of Viblast is built on top of ExoPlayer version *2.4.3*. It must be specified in `build.gradle`:
+```
+dependencies {
+    compile 'com.google.android.exoplayer:exoplayer:r2.4.3'
+}
+```

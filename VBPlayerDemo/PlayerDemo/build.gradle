@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 17
+    compileSdkVersion 24
     buildToolsVersion "26.0.0"
 
     defaultConfig {
         applicationId "com.viblast.android.vbplayerdemo"
-        minSdkVersion 16
-        targetSdkVersion 20
+        minSdkVersion 18
+        targetSdkVersion 24
     }
 
     buildTypes {
@@ -19,6 +19,6 @@ android {
 }
 
 dependencies {
-    compile 'com.google.android.exoplayer:exoplayer:r1.5.3'
-    compile files('libs/viblast.jar')
+    compile 'com.google.android.exoplayer:exoplayer:r2.4.3'
+    compile project(':viblast-2.1-release')
 }
