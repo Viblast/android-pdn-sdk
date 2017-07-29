@@ -20,5 +20,5 @@ android {
 
 dependencies {
     compile 'com.google.android.exoplayer:exoplayer:r2.4.3'
-    compile project(':viblast-2.3-release')
+    compile project(':viblast-2.4-release')
 }
