@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.viblast.android.vbplayerdemo"
-        minSdkVersion 18
+        minSdkVersion 19
         targetSdkVersion 24
     }
 
@@ -20,5 +20,5 @@ android {
 
 dependencies {
     compile 'com.google.android.exoplayer:exoplayer:r2.4.3'
-    compile project(':viblast-2.4-release')
+    compile project(':viblast-2.5-release')
 }
