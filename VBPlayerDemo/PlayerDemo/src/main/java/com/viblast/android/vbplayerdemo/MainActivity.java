@@ -22,7 +22,7 @@ public class MainActivity extends Activity {
 		// start faster, using the lowest resolution:
 		vbConfig.advancedConfig.put("initial-abr-index", "0");
 
-		vbConfig.setCdnStream("http://cdn3.viblast.com/streams/hls/airshow/playlist.m3u8");
+		vbConfig.setCdnStream("https://nimble.viblast.com:8081/live/high/playlist.m3u8");
 		
 		vbConfig.advancedConfig.put("enable-pdn", "true");
 		vbConfig.advancedConfig.put("enable-realtime-loggger", "true");
