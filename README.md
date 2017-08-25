@@ -137,9 +137,9 @@ There are two options for checking playback state:
 
 ### ExoPlayer
 
-The current version of Viblast is built on top of ExoPlayer version *2.4.3*. It must be specified in `build.gradle`:
+The current version of Viblast is built on top of ExoPlayer version *2.5.1*. It must be specified in `build.gradle`:
 ```
 dependencies {
-    compile 'com.google.android.exoplayer:exoplayer:r2.4.3'
+    compile 'com.google.android.exoplayer:exoplayer:r2.5.1'
 }
 ```
