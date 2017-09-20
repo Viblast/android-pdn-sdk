@@ -1,2 +1,0 @@
-configurations.maybeCreate("default")
-artifacts.add("default", file('viblast-2.8-release.aar'))
