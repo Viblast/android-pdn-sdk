@@ -22,16 +22,18 @@ public class MainActivity extends Activity {
 		// start faster, using the lowest resolution:
 		vbConfig.advancedConfig.put("initial-abr-index", "0");
 
-		vbConfig.setCdnStream("https://nimble.viblast.com:8081/live/high/playlist.m3u8");
-		
+		vbConfig.setCdnStream("http://cdntest.viblast.com/streams/hls/airshow/491k/stream.m3u8");
+		vbConfig.advancedConfig.put("log", "verbose");
+
 		vbConfig.advancedConfig.put("enable-pdn", "true");
 		vbConfig.advancedConfig.put("enable-realtime-loggger", "true");
 		vbConfig.advancedConfig.put("realtime-logger-server", "wss://cs.viblast.com/rt");
-		vbConfig.advancedConfig.put("key", "200057d28abdc9fb593eb654629f2f03c14fac9c5fc0825c899bd6095ad7a8de5f83d52297310d340876edc852425419de9630208b8476a4307ad1082f80f033c8ffb5d5100fdf126e25ff7c77759cf1");
+		vbConfig.advancedConfig.put("key", "200057d28abdc9fb593eb654629f2f03c14fac9c5fc0825c899bd6095ad7a8dece86532a2f9fdb9034951e75c414804bdbdba0de07b6909d7d0dbe314ec6bdfc");
 //		if you want to see Viblast logs:
 //		vbConfig.advancedConfig.put("log", "verbose");
 
 		viblastPlayer = new ViblastPlayer(viblastView, vbConfig);
+
 	}
 
 	@Override
@@ -48,6 +50,12 @@ public class MainActivity extends Activity {
 		viblastPlayer.release();
 		
 		super.onStop();
+	}
+
+	@Override
+	protected void onDestroy() {
+		viblastPlayer.release();
+		super.onDestroy();
 	}
 
 
