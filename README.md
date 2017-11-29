@@ -13,7 +13,7 @@ Let's assume you have an existing Android Studio project or you've just created 
 - Add dependency for ExoPlayer in `build.gradle`:
 ```
 dependencies {
-    compile 'com.google.android.exoplayer:exoplayer:r2.5.1'
+    compile 'com.google.android.exoplayer:exoplayer:2.6.0'
 }
 ```
 
@@ -137,9 +137,9 @@ There are two options for checking playback state:
 
 ### ExoPlayer
 
-The current version of Viblast is built on top of ExoPlayer version *2.5.1*. It must be specified in `build.gradle`:
+The current version of Viblast is built on top of ExoPlayer version *2.6.0*. It must be specified in `build.gradle`:
 ```
 dependencies {
-    compile 'com.google.android.exoplayer:exoplayer:r2.5.1'
+    compile 'com.google.android.exoplayer:exoplayer:2.6.0'
 }
 ```
