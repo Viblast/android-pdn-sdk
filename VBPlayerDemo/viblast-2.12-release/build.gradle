@@ -1,0 +1,2 @@
+configurations.maybeCreate("default")
+artifacts.add("default", file('viblast-2.12-release.aar'))

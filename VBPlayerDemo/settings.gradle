@@ -1,1 +1,1 @@
-include ':PlayerDemo', ':viblast-2.11-release'
+include ':PlayerDemo', ':viblast-2.12-release'

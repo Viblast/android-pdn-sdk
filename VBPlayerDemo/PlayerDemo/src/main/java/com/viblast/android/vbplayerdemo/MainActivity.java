@@ -22,7 +22,7 @@ public class MainActivity extends Activity {
 		// start faster, using the lowest resolution:
 		vbConfig.advancedConfig.put("initial-abr-index", "0");
 
-		vbConfig.setCdnStream("http://cdntest.viblast.com/streams/hls/airshow/playlist.m3u8");
+		vbConfig.setCdnStream("https://nimble.viblast.com:8081/live/high/playlist.m3u8");
 		vbConfig.advancedConfig.put("log", "error");
 
 		vbConfig.advancedConfig.put("enable-pdn", "false");
@@ -32,7 +32,6 @@ public class MainActivity extends Activity {
 //		vbConfig.advancedConfig.put("log", "verbose");
 
 		viblastPlayer = new ViblastPlayer(viblastView, vbConfig);
-
 	}
 
 	@Override
