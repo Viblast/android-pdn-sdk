@@ -4,14 +4,14 @@ Viblast Android SDK supports `PlayReady`, `Widevine`, `ClearKey` or Multi-DRM pr
 
 
 ## How it works
-To enable `DRM` support, the Application must provide `ViblastDrmCallback` object when the player is created. If the object is `null`, the Viblast Player will not handle `DRM` protected streams.
+To enable `DRM` support, the Application must provide `ViblastDrmCallback` object when the player is created. If the object is `null`, the Viblast Player can not handle `DRM` protected streams.
 
 When the playback of protected stream starts:
 1. The Renderer detects the available `CDM` pssh boxes.
 2. Then internally notifies the player that the stream is protected with a list of applied `CDMs`.
-3. Viblast Player selects device supported `CDMs` from the list and calls `onDrmInfoNeed` of the `ViblastDrmCallback` object.
+3. Viblast Player selects device supported `CDMs` from the list and invokes `onDrmInfoNeed` of the `ViblastDrmCallback` object.
 4. The Application chooses the desired CDM and returns it with the `ViblastDRMInfo` object as a result of the callback.
-5. Viblast Player uses the result object `ViblastDrmInfo` in order to initialize the `CDM` and provision the key acquisition requests.
+5. Viblast Player uses the result object `ViblastDrmInfo` in order to initialize the `CDM` and to provision the key acquisition requests.
 6. If the result is `null` then the player will inform the Renderer that the `DRM` is not supported and the playback will not continue.
 
 ## Viblast DRM API
@@ -23,11 +23,11 @@ Implementation of this interface is passed to the ViblastPlayer, allowing it to 
 ```
 ViblastDRMInfo onDrmInfoNeed(Set<UUID> cdmUUIDs);
 ```
-- Returns a ViblastDRMInfo object contains the desired `CDM` initialization data. Might be `null` if the application does not support any of the passed `CDMs`.
+- Returns a ViblastDRMInfo object containing the desired `CDM` initialization data. Might be `null` if the application can not handle any of the passed `CDMs`.
 - parameter cdmUUIDs - a set of `CDM` UUIDs supported by the device and applicable for the protected stream.
 
 ### Class ViblastDRMInfo
-Provides the information need for initialization and operation of the desired `CDM`.
+Provides the information needed for initialization and operation of the desired `CDM`.
 #### Method summary
 ```
 ViblastDrmInfo(UUID selectedCdmUUID, String licenseServerUrl)
@@ -49,7 +49,7 @@ String getSelectedCdmUUID();
 ```
 void addDrmKeyRequestProperty(String key, String value);
 ```
-- Adds key request property. The key will be add as a header to the http requests performed by the underlying security module.  
+- Adds key request property. The key will be added as a header to the http requests performed by the underlying security module.  
 
 ```
 void removeDrmKeyRequestProperty(String key);
