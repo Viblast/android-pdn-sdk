@@ -27,7 +27,7 @@ public class MainActivity extends Activity {
 
 		vbConfig.advancedConfig.put("enable-pdn", "false");
 		vbConfig.advancedConfig.put("enable-realtime-loggger", "false");
-		vbConfig.advancedConfig.put("key", "200057d28abdc9fb593eb654629f2f03c14fac9c5fc0825c899bd6095ad7a8dece86532a2f9fdb9034951e75c414804bdbdba0de07b6909d7d0dbe314ec6bdfc");
+		vbConfig.advancedConfig.put("key", "200057d28abdc9fb593eb654629f2f03c14fac9c5fc0825c899bd6095ad7a8deb99804cd93c2896bb19efc36e0d4af34dbdba0de07b6909d7d0dbe314ec6bdfc");
 //		if you want to see Viblast logs:
 //		vbConfig.advancedConfig.put("log", "verbose");
 
