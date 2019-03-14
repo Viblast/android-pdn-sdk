@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.2"
+    buildToolsVersion "28.0.3"
 
     defaultConfig {
         applicationId "com.viblast.android.vbplayerdemo"
@@ -19,6 +19,6 @@ android {
 }
 
 dependencies {
-    compile 'com.google.android.exoplayer:exoplayer:2.6.0'
-    implementation project(':viblast-2.16-release')
+    api 'com.google.android.exoplayer:exoplayer:2.6.0'
+    implementation project(':viblast-2.17-release')
 }
